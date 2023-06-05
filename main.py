@@ -20,7 +20,7 @@ def send_email(email: str, subject: str, message: str):
 
     # Load and render HTML template
     template = env.get_template("email.html")
-    html_content = template.render(title=subject, name="Mohammed", code="4832", message=message)
+    html_content = template.render(title=subject, name="Mohammed", code="4312", message=message)
 
     # Create a multipart message container
     msg = MIMEMultipart("alternative")
