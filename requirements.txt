@@ -3,3 +3,4 @@ jinja2
 uvicorn
 aio_pika
 python-dotenv
+retry
