@@ -4,7 +4,7 @@ import smtplib
 from jinja2 import Environment, FileSystemLoader
 
 
-def send_emails(email: str, subject: str, message: str):
+def send_emails(email: str, subject: str, message: str, code: str, fullName: str):
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
     sender_email = "s6.mohammedaljader@gmail.com"
@@ -15,7 +15,7 @@ def send_emails(email: str, subject: str, message: str):
 
     # Load and render HTML template
     template = env.get_template("email.html")
-    html_content = template.render(title=subject, name="Mohammed", code="4312", message=message)
+    html_content = template.render(title=subject, name=fullName, code=code, message=message)
 
     # Create a multipart message container
     msg = MIMEMultipart("alternative")
