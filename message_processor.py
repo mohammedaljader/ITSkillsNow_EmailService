@@ -22,9 +22,7 @@ async def process_message(message: IncomingMessage):
 async def start_listener_retry():
     # Connect to RabbitMQ
     rabbitmq_host = os.getenv('RABBITMQ_HOST')
-    rabbitmq_port = os.getenv('RABBITMQ_PORT')
-    rabbitmq_url = f'amqp://{rabbitmq_host}:{int(rabbitmq_port)}'
-    print(rabbitmq_url)
+    rabbitmq_url = f'amqp://{rabbitmq_host}:{5672}'
     connection = await connect_robust(rabbitmq_url)
 
     # Create a channel
