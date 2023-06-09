@@ -23,7 +23,7 @@ async def start_listener_retry():
     # Connect to RabbitMQ
     rabbitmq_host = os.getenv('RABBITMQ_HOST')
     rabbitmq_port = os.getenv('RABBITMQ_PORT')
-    rabbitmq_url = f'amqp://{rabbitmq_host}:{rabbitmq_port}'
+    rabbitmq_url = f'amqp://{rabbitmq_host}:{int(rabbitmq_port)}'
     print(rabbitmq_url)
     connection = await connect_robust(rabbitmq_url)
 
